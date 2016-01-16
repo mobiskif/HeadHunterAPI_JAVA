@@ -1,0 +1,4 @@
+<!--
+  <param name="archive" value="bin\Main.jar" />
+  <param name="java_arguments" value="-Djnlp.packEnabled=true"/>
+-->
