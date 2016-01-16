@@ -3,30 +3,31 @@ import java.awt.Button;
 import java.awt.HeadlessException;
 
 import javax.swing.JApplet;
+import javax.swing.JFrame;
 
 import mvc.Controller;
 import mvc.TreeView;
 import mvc.View;
 
 
-public class Main extends JApplet {
-	
+public class Main extends Applet {
 
 	public Main() throws HeadlessException {
 		super();
-		// TODO Auto-generated constructor stub
+        Controller c = new Controller();
+        TreeView vv = new TreeView(c);
+		add(vv);
 		setSize(640, 480);
 		setVisible(true);
-		add(new Button("jopa"));
-		System.out.println("asdfasfadsf");
 	}
 
 	public static void main(String[] args) {
-		new Main();
-        //Controller c = new Controller();
-        //TreeView v = new TreeView(c);
-        //View vv = new View(c);
-        //MainForm mf = new MainForm();
+        JFrame f = new JFrame();
+        Controller c = new Controller();
+        TreeView vv = new TreeView(c);
+        f.setSize(640, 480);
+        f.setVisible(true);
+        f.add(vv);
 	}
 
 }

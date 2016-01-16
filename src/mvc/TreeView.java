@@ -6,17 +6,18 @@ import med.Clinic;
 import javax.swing.*;
 import java.awt.*;
 
-public class TreeView extends JFrame {
+public class TreeView extends JPanel {
     public JTree treeLeft = new JTree(new TreeModel());
     public JTree treeRight = new JTree();
 
     public TreeView(Controller c) {
         super();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout(0, 0));
-        getContentPane().add(panel);
+        //getContentPane().add(panel);
+        add(panel);
 
         treeLeft.setDragEnabled(true);
         treeLeft.setDropMode(DropMode.ON_OR_INSERT);

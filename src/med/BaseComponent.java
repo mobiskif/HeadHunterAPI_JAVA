@@ -71,8 +71,8 @@ public class BaseComponent extends JPanel implements ActionListener {
 		ImageIcon ii = new ImageIcon();
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("src/img.png"));
-			ii = new ImageIcon("src/img.png");
+			img = ImageIO.read(new File("img/img.png"));
+			ii = new ImageIcon("img/img.png");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

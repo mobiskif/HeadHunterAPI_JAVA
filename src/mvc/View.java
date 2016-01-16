@@ -6,15 +6,16 @@ import med.Clinic;
 import javax.swing.*;
 import java.awt.*;
 
-public class View extends JFrame {
+public class View extends JPanel {
 
     public View(Controller c) {
         super();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout(0, 0));
-        getContentPane().add(panel);
+        //getContentPane().add(panel);
+        add(panel);
 
         JToolBar toolBar = new JToolBar();
         panel.add(toolBar, BorderLayout.NORTH);
