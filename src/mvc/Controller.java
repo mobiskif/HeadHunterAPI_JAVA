@@ -15,14 +15,18 @@ public class Controller implements ActionListener, Serializable {
 		try {
 			ObjectOutputStream oos;
 			ObjectInputStream ois;
-			/*
+			
 			if (e.getActionCommand().equalsIgnoreCase("Exit")) {
+				System.out.println("exit");
+				
+				/*
 				WindowEvent wev = new WindowEvent(this.view,
 						WindowEvent.WINDOW_CLOSING);
 				Toolkit.getDefaultToolkit().getSystemEventQueue()
 						.postEvent(wev);
+						*/
 			}
-			*/
+			
 			if (e.getActionCommand().equalsIgnoreCase("Save")) {
 				oos = new ObjectOutputStream(new FileOutputStream(view.treeLeft
 						.getClass().getName() + ".txt"));

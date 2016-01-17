@@ -63,7 +63,7 @@ public class BaseComponent extends JPanel implements ActionListener {
 		table.setDragEnabled(true);
 		// add(table);
 
-		LoadImg();
+		//LoadImg();
 		lbl.setTransferHandler(new TransferHandler("text"));
 	}
 
@@ -71,8 +71,9 @@ public class BaseComponent extends JPanel implements ActionListener {
 		ImageIcon ii = new ImageIcon();
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("img/img.png"));
-			ii = new ImageIcon("img/img.png");
+			//img = ImageIO.read(new File("/res/img.png"));
+			img = ImageIO.read(new File(getClass().getResource("../res/img.png").toURI()));
+			//ii = new ImageIcon("/res/img.png");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

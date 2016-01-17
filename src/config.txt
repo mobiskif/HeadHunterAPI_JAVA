@@ -1,4 +1,4 @@
 host = localhost:3306
 user = root
 password = router
-ico = D://Java/src/img.png
+ico = res/img.png

@@ -11,7 +11,7 @@ import utils.Booble;
  * Created with IntelliJ IDEA. User: user Date: 20.10.13 Time: 15:58 To change
  * this template use File | Settings | File Templates.
  */
-public class Clinic extends BaseComponent2 {
+public class Clinic extends BaseComponent {
 	public Clinic(String s) {
 		super(s);
 		Doctor doctor1 = new Doctor("Петров");

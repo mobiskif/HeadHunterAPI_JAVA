@@ -1,8 +1,12 @@
 package med;
 import java.awt.*;
 
+import javax.swing.JPanel;
+
+import org.hamcrest.core.IsNull;
+
 @SuppressWarnings("serial")
-public class Balloon extends Component implements Runnable{
+public class Balloon extends JPanel implements Runnable{
 
     Container parent;
     double dx, dy;
@@ -21,9 +25,14 @@ public class Balloon extends Component implements Runnable{
         Double r = getDistance(getLocation(), new Point(0,0));
         dx=4*getX()/r;
         dy=4*getY()/r;
-        (new Thread(this)).start();
+       if(parent!=null) (new Thread(this)).start();
     }
-    public double getDistance(Point p1, Point p2) {
+    public Balloon() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public double getDistance(Point p1, Point p2) {
         double r = Math.sqrt( Math.pow(p1.x - p2.x,2) + Math.pow(p1.y - p2.y,2) );
         return r;
     }
