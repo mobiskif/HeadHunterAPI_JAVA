@@ -14,12 +14,12 @@ import utils.Booble;
 public class Clinic extends BaseComponent {
 	public Clinic(String s) {
 		super(s);
-		Doctor doctor1 = new Doctor("Петров");
+		Doctor doctor1 = new Doctor("dr Петров");
 		doctor1.add(new Patient("Попкина"));
 		doctor1.add(new Patient("Жопкина"));
 		add(doctor1);
 
-		Doctor doctor2 = new Doctor("Сидоров");
+		Doctor doctor2 = new Doctor("dr Сидоров");
 		Patient patient = new Patient("Дураков");
 		patient.add(new Pathology("Грипп"));
 		doctor2.add(patient);

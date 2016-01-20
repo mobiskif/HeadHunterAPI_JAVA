@@ -37,10 +37,10 @@ public class BaseComponent extends JPanel implements ActionListener {
 		setSize(160, 186);
 		setLayout(new FlowLayout());
 		this.name = name;
-		params.put("Clinic", new Vector());
-		params.put("Pathology", new Vector());
-		params.put("Doctor", new Vector());
-		params.put("Patient", new Vector());
+		//params.put("Clinic", new Vector());
+		//params.put("Pathology", new Vector());
+		//params.put("Doctor", new Vector());
+		//params.put("Patient", new Vector());
 
 		createUIComponents();
 
@@ -107,7 +107,7 @@ public class BaseComponent extends JPanel implements ActionListener {
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
-		g.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 8, 6);
+		g.drawRoundRect(2, 2, getWidth() - 4, getHeight() - 4, 8, 6);
 	}
 
 	/*

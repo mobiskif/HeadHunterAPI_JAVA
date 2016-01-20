@@ -18,13 +18,9 @@ public class Controller implements ActionListener, Serializable {
 			
 			if (e.getActionCommand().equalsIgnoreCase("Exit")) {
 				System.out.println("exit");
-				
-				/*
-				WindowEvent wev = new WindowEvent(this.view,
-						WindowEvent.WINDOW_CLOSING);
-				Toolkit.getDefaultToolkit().getSystemEventQueue()
-						.postEvent(wev);
-						*/
+				//WindowEvent wev = new WindowEvent((Window)this.view, WindowEvent.WINDOW_CLOSING);
+				//Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(wev);
+						
 			}
 			
 			if (e.getActionCommand().equalsIgnoreCase("Save")) {
