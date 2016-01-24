@@ -6,19 +6,18 @@ import med.Clinic;
 import javax.swing.*;
 import java.awt.*;
 
-public class TreeView extends JPanel {
-    public JTree treeLeft = new JTree(new TreeModel());
+public class TreeView extends Box {
+    public TreeView(int axis) {
+		super(axis);
+	}
+
+	public JTree treeLeft = new JTree(new TreeModel());
     public JTree treeRight = new JTree();
 
     public TreeView(Controller c) {
-        super();
-        setVisible(true);
-        setLayout(new FlowLayout());
-        //setSize(800, 600);
+        super(BoxLayout.PAGE_AXIS);
 
         JPanel panel = new JPanel();
-   
-        //getContentPane().add(panel);
         add(panel);
         panel.setLayout(new BorderLayout(0, 0));
         //panel.setSize(getWidth(), getHeight());
@@ -40,7 +39,7 @@ public class TreeView extends JPanel {
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(table);
-        panel.add(scrollPane, BorderLayout.CENTER);
+        //panel.add(scrollPane, BorderLayout.CENTER);
 
         JToolBar toolBar = new JToolBar();
         panel.add(toolBar, BorderLayout.NORTH);
@@ -53,16 +52,10 @@ public class TreeView extends JPanel {
         btnSave.addActionListener(c);
         toolBar.add(btnSave);
 
-        JButton btnExit = new JButton("Exit");
-        btnExit.addActionListener(c);
-        //panel.add(btnExit, BorderLayout.SOUTH);
-        toolBar.add(btnExit);
-
         Clinic clinic = new Clinic("ОЦКБ");
         panel.add(clinic, BorderLayout.CENTER);
 
         c.view = this;
-   
     }
 
 }

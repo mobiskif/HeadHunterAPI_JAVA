@@ -3,6 +3,8 @@ import java.applet.Applet;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.CardLayout;
+import java.awt.FlowLayout;
+import java.awt.Frame;
 import java.awt.HeadlessException;
 
 import javax.swing.JApplet;
@@ -20,8 +22,9 @@ public class Main extends Applet {
 		Controller c = new Controller();
         TreeView vv = new TreeView(c);
 		setSize(640, 480);
-		add(vv);
 		setVisible(true);
+
+		add(vv);
 	}
 
 	public static void main(String[] args) {
@@ -31,10 +34,9 @@ public class Main extends Applet {
         Controller c = new Controller();
         TreeView vv = new TreeView(c);
         f.setSize(640, 480);
-        f.setLayout(new CardLayout());
-        //vv.setSize(f.getWidth(), f.getHeight());
-        f.add(vv);
         f.setVisible(true);
+
+        f.setContentPane(vv);
 	}
 
 	
