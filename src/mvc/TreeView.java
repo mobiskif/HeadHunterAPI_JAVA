@@ -12,12 +12,16 @@ public class TreeView extends JPanel {
 
     public TreeView(Controller c) {
         super();
-        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        setLayout(new FlowLayout());
+        //setSize(800, 600);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout(0, 0));
+   
         //getContentPane().add(panel);
         add(panel);
+        panel.setLayout(new BorderLayout(0, 0));
+        //panel.setSize(getWidth(), getHeight());
 
         treeLeft.setDragEnabled(true);
         treeLeft.setDropMode(DropMode.ON_OR_INSERT);
@@ -58,8 +62,7 @@ public class TreeView extends JPanel {
         panel.add(clinic, BorderLayout.CENTER);
 
         c.view = this;
-        setVisible(true);
-        setSize(640, 480);
+   
     }
 
 }
