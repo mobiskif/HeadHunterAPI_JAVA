@@ -14,6 +14,9 @@ public class TreeView extends Box {
 	public JTree treeLeft = new JTree(new TreeModel());
     public JTree treeRight = new JTree();
 
+    /**
+     * @wbp.parser.constructor
+     */
     public TreeView(Controller c) {
         super(BoxLayout.PAGE_AXIS);
 

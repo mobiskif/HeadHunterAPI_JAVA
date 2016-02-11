@@ -15,12 +15,12 @@ public class Clinic extends BaseComponent {
 	public Clinic(String s) {
 		super(s);
 		Doctor doctor1 = new Doctor("dr Петров");
-		doctor1.add(new Patient("Попкина"));
-		doctor1.add(new Patient("Жопкина"));
+		doctor1.add(new Patient("Паршин"));
+		doctor1.add(new Patient("Жукова"));
 		add(doctor1);
 
 		Doctor doctor2 = new Doctor("dr Сидоров");
-		Patient patient = new Patient("Дураков");
+		Patient patient = new Patient("Дубницкий");
 		patient.add(new Pathology("Грипп"));
 		doctor2.add(patient);
 		doctor2.add(new Patient("Беленко"));
