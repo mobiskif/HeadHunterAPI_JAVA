@@ -1,4 +1,4 @@
-package mvc;
+package mvc.old;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;

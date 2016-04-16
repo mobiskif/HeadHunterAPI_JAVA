@@ -1,4 +1,5 @@
 package mvc;
+
 import java.applet.Applet;
 import java.awt.BorderLayout;
 import java.awt.Button;
@@ -7,41 +8,40 @@ import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 
+import javax.swing.BoxLayout;
 import javax.swing.JApplet;
 import javax.swing.JFrame;
 
 import mvc.Controller;
-import mvc.TreeView;
-
+import mvc.View;
 
 public class Main extends Applet {
 
-	public Main() throws HeadlessException {
+	public Main() {//throws HeadlessException {
 		super();
-       
-		Controller c = new Controller();
-        TreeView vv = new TreeView(c);
-		setSize(640, 480);
-		setVisible(true);
-
-		add(vv);
+		setLayout( new BorderLayout());
+	
+		View v = new View (
+					new Model (
+						new Controller()
+					)
+				);
+		add(v);
 	}
 
 	public static void main(String[] args) {
-        JFrame f = new JFrame();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       
-        Controller c = new Controller();
-        TreeView vv = new TreeView(c);
-        f.setSize(640, 480);
-        f.setVisible(true);
-
-        f.setContentPane(vv);
+		JFrame f = new JFrame();
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+		View v = new View (
+					new Model(
+						new Controller()
+					)
+				);
+		
+		f.setSize(600, 400);
+		f.setVisible(true);
+		f.setContentPane(v);
 	}
 
-	
-	
-	
-	
-	
 }

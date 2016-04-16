@@ -1,8 +1,10 @@
 package med;
 
 import java.awt.BorderLayout;
+import java.util.Enumeration;
 
 import javax.swing.JPanel;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 import utils.Booble;
 
@@ -14,6 +16,7 @@ import utils.Booble;
 public class Clinic extends BaseComponent {
 	public Clinic(String s) {
 		super(s);
+			
 		Doctor doctor1 = new Doctor("dr Петров");
 		doctor1.add(new Patient("Паршин"));
 		doctor1.add(new Patient("Жукова"));

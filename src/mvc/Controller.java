@@ -1,62 +1,83 @@
 package mvc;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Point;
 import java.awt.event.*;
-import java.io.*;
 
-public class Controller implements ActionListener, Serializable {
-	public TableModel model;
-	public TreeView view;
-
+public class Controller implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
+	public Model model;
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println(e.getActionCommand());
-		try {
-			ObjectOutputStream oos;
-			ObjectInputStream ois;
-			
-			if (e.getActionCommand().equalsIgnoreCase("Exit")) {
-				/*
-				try {
-					WindowEvent wev = new WindowEvent((Window)this.frame, WindowEvent.WINDOW_CLOSING);
-					Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(wev);
-					
-				} catch (Exception e2) {
-					System.err.println(e2);
-				}
-				*/
-			}
-			
-			if (e.getActionCommand().equalsIgnoreCase("Save")) {
-				oos = new ObjectOutputStream(new FileOutputStream(view.treeLeft.getClass().getName() + ".txt"));
-				oos.writeObject(view.treeLeft);
-				oos = new ObjectOutputStream(new FileOutputStream(view.treeRight.getClass().getName() + ".txt"));
-				oos.writeObject(view.treeRight);
-			}
-			if (e.getActionCommand().equalsIgnoreCase("Load")) {
-				ois = new ObjectInputStream(new FileInputStream(view.treeRight.getClass().getName() + ".txt"));
-				JTree tree = (JTree) ois.readObject();
-				view.treeLeft.setModel(tree.getModel());
-				/*
-				 * ois = new ObjectInputStream(new
-				 * FileInputStream("med.Clinic.txt")); Clinic cl = (Clinic)
-				 * ois.readObject(); view.getContentPane().add(cl);
-				 * view.repaint();
-				 */
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-
+		System.out.println(e.getSource());
+		if (e.getActionCommand().equalsIgnoreCase("Найти"))
+			model.setModel(model.textField.getText());
 	}
 
-	MouseListener listener = new MouseAdapter() {
-		public void mousePressed(MouseEvent me) {
-			JComponent comp = (JComponent) me.getSource();
-			TransferHandler handler = comp.getTransferHandler();
-			handler.exportAsDrag(comp, me, TransferHandler.COPY);
-		}
-	};
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		if (arg0.getKeyCode()==10)
+			model.setModel(model.textField.getText());
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		Point p = e.getPoint(); 
+		//model.table.setRowSelectionAllowed(false); 
+		//model.table.changeSelection(model.table.rowAtPoint(p), model.table.columnAtPoint(p), false, false); 
+		System.out.println(model.table.getValueAt(model.table.rowAtPoint(p), model.table.columnAtPoint(p)));
+		model.textPane.setText((String) model.table.getValueAt(model.table.rowAtPoint(p), model.table.columnAtPoint(p)));
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		Point p = arg0.getPoint(); 
+		//model.table.setRowSelectionAllowed(false); 
+		model.textPane.setText((String) model.table.getValueAt(model.table.rowAtPoint(p), model.table.columnAtPoint(p)));
+	}
 
 }
