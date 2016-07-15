@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SerialTreeJAVA">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/javax.json-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/javax.json-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/gson-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/json-simple-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mysql-connector-java-5.1.38-bin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
